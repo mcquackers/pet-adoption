@@ -30,7 +30,7 @@ class AnimalsController < ApplicationController
       if @animal.save
         AnimalMailer.new_animal_created_email(@animal, "test@example.com").deliver_now
 
-        format.html { redirect_to @animal, notice: 'Animal was successfully created.' }
+        format.html { redirect_to @animal, notice: 'Animal was successfully created.  A confirmation email has been sent.' }
         format.json { render :show, status: :created, location: @animal }
       else
         format.html { render :new }

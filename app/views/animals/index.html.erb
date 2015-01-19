@@ -16,10 +16,10 @@
   <tbody>
     <% @animals.each do |animal| %>
       <tr>
-        <td><%= animal.name %></td>
-        <td><%= animal.age %></td>
-        <td><%= animal.breed %></td>
-        <td><%= animal.color %></td>
+        <td><%= animal.animal_name %></td>
+        <td><%= animal.animal_age %></td>
+        <td><%= animal.animal_breed %></td>
+        <td><%= animal.animal_color %></td>
         <td><%= link_to 'Show', animal %></td>
         <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
         <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
