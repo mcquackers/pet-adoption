@@ -25,4 +25,8 @@ class Animal < ActiveRecord::Base
       color
     end
   end
+
+  def deliver_confirmation_email
+    AnimalMailer.new_animal_created_email(self, "test@example.com").deliver_now
+  end
 end
