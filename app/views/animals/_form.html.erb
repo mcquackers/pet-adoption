@@ -27,6 +27,10 @@
     <%= f.label :color %><br>
     <%= f.text_field :color %>
   </div>
+  <div class="field">
+    <p>Being taken care of by:</p>
+    <%= collection_check_boxes(:animal, :caretaker_ids, Employee.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

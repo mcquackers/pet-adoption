@@ -20,5 +20,18 @@
   <%= @animal.animal_color %>
 </p>
 
+<p>
+  <strong>Caretakers:</strong>
+  <% if @animal.caretakers.any? %>
+    <ul>
+      <% @animal.caretakers.each do |caretaker| %>
+        <li><%= caretaker.name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <span>Not being taken care of</span>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
 <%= link_to 'Back', animals_path %>

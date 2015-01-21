@@ -10,5 +10,18 @@
   <%= @employee.employee_email %>
 </p>
 
+<p>
+  <strong>Taking care of:</strong>
+  <% if @employee.animals.any? %>
+    <ul>
+      <% @employee.animals.each do |animal| %>
+        <li><%= animal.name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <span>Not assigned to any animals</span>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>

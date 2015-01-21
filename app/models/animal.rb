@@ -27,6 +27,7 @@ class Animal < ActiveRecord::Base
   end
 
   def deliver_confirmation_email
-    AnimalMailer.new_animal_created_email(self, "test@example.com").deliver_now
+    # AnimalMailer.new_animal_created_email(self, "test@example.com").deliver_now
+    sleep 10
   end
 end
